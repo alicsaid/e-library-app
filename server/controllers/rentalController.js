@@ -85,6 +85,7 @@ exports.deleteRental = async (req, res) => {
   }
 };
 
+// Get all archived rentals
 exports.getArchivedRentals = async (req, res) => {
   try {
     const archivedRentals = await Rental.findAll({
@@ -103,9 +104,8 @@ exports.archiveRentalById = async (req, res) => {
     const rental = await Rental.findByPk(req.params.id);
 
     if (rental) {
-      // Update the archived flag to true and change status to 'returned'
       rental.archived = true;
-      rental.status = "returned"; // assuming 'status' field exists in the model
+      rental.status = "returned";
       await rental.save();
 
       res.json({

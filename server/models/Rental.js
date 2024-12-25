@@ -1,3 +1,5 @@
+// model/Rental.js
+
 const { DataTypes } = require("sequelize");
 const sequelize = require("../utils/dbConfig");
 const Book = require("./Book"); // Import Book model

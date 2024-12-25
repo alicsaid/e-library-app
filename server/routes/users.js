@@ -1,22 +1,22 @@
 // routes/users.js
 
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const userController = require('../controllers/userController');
+const userController = require("../controllers/userController");
 
 // GET all users
-router.get('/', userController.getAllUsers);
+router.get("/", userController.getAllUsers);
 
 // GET a single user by ID
-router.get('/:id', userController.getUserById);
+router.get("/:id", userController.getUserById);
 
 // POST create a new user
-router.post('/', userController.createUser);
+router.post("/", userController.createUser);
 
 // PUT update an existing user
-router.put('/:id', userController.updateUser);
+router.put("/:id", userController.updateUser);
 
 // DELETE a user
-router.delete('/:id', userController.deleteUser);
+router.delete("/:id", userController.deleteUser);
 
 module.exports = router;

@@ -1,23 +1,24 @@
 // routes/auth.js
+
 const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/authController");
-const auth = require("../utils/auth"); // Correct the import if necessary
-const loginRateLimiter = require("../utils/rateLimiter"); // Import rate limiter
+const auth = require("../utils/auth");
+const loginRateLimiter = require("../utils/rateLimiter");
 
-// Ruta za prijavu
+// POST login
 router.post("/login", loginRateLimiter, authController.login);
 
-// Ruta za zahtev za resetovanje lozinke
+// POST forgot password
 router.post("/forgot-password", authController.forgotPassword);
 
-// Ruta za resetovanje lozinke
+// POST reset password
 router.post("/reset-password", authController.resetPassword);
 
-// Ruta za osvežavanje tokena
+// POST refresh token
 router.post("/refresh-token", authController.refreshToken);
 
-// Ruta za promenu lozinke (Protected route)
-router.post("/change-password", auth, authController.changePassword); // Protect the route with JWT token
+// POST change password
+router.post("/change-password", auth, authController.changePassword);
 
 module.exports = router;

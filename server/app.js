@@ -11,7 +11,7 @@ const sequelize = require("./utils/dbConfig");
 // Middleware setup
 const app = express();
 
-app.use(morgan("combined")); // "combined" log format za morgan
+app.use(morgan("combined"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

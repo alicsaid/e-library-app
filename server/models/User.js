@@ -1,6 +1,7 @@
+// model/User.js
+
 const { DataTypes } = require("sequelize");
 const sequelize = require("../utils/dbConfig");
-const Rental = require("./Rental"); // Import Rental model
 
 const User = sequelize.define(
   "User",

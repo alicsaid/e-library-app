@@ -89,6 +89,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
+// Update a user
 exports.updateUser = async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
